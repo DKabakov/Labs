@@ -188,7 +188,7 @@ image::image-2022-05-06-16-17-27-738.png[]
   {
     for(;;)
     {
-   out = myMainTask.GetVolt(); // Переменная, которая содержит значение напряжения
+   out = myMainTask.GetMessage(); // Переменная, которая содержит значение напряжения
    sprintf(mes, "Voltage = %1.4f V \n", out); // Информация, которая передается в терминал
    usartDriver.SendMessage(mes, strlen(mes)); // Отправка сообщения
    Sleep(333ms); // Заснуть на 100 мс
@@ -228,12 +228,12 @@ image::image-2022-05-06-16-18-20-276.png[]
 
 [source, c]
   for(;;)
-    {
-    Value = MainTask.GetVolt(); // Получаем значение напряжения и записываем его в переменную Value
-    Sleep(100ms); // Задержка 100 мс для ОСРВ
-    led.CalculateDutyCycle(Value); // Передаем значение напряжения в метод CalculateDutyCycle
-    led.SetDutyCycle(); // Передача значения
-    }
+{
+Value = MainTask.GetVolt(); // Получаем значение напряжения и записываем его в переменную Value*/
+led.CalculateDutyCycle(Value); // Передаем значение напряжения в метод CalculateDutyCycle
+led.SetDutyCycle(Value); // Передача значения
+Sleep(100ms); // Задержка 100 мс для ОСРВ
+}
 
 === Класс MainTask
 
