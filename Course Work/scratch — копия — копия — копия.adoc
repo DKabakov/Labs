@@ -1,4 +1,5 @@
 :imagesdir: Images
+:videodir: Images
 :toc:
 :toc-title: Оглавление
 
